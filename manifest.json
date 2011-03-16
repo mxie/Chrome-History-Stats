@@ -1,11 +1,13 @@
 {
-    "name": "My First Extension",
+    "name": "History Stats",
     "version": "1.0",
-    "description": "The first extension that I made.",
+    "description": "Shows some simple statistics of your browser history.",
     "browser_action": {
-        "default_icon": "icon.png"
+        "default_icon": "icon.png",
+        "popup": "popup.html"
 	},
 	"permissions": [
-		"http://api.flickr.com/"
+		"history",
+		"tabs"
 	]
 }
