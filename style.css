@@ -1,0 +1,20 @@
+body {
+  width: 400px;
+  height: 400px;
+}
+
+div {
+    color: #666666;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+div#pieinfo {
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+span#data {
+    font-style: italic;
+    font-weight: bold;
+}
