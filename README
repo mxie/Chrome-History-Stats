@@ -7,6 +7,11 @@ What does it do?
 - Grabs your browser history from the past 2 weeks and gives you a pie chart that breaks down what sites you visited during the time period.
 - If you click on any particular part of the pie chart, a little more detail about your visits to that particular site will be provided (mostly just # of visits).
 
+What tools does it use?
+- jQuery
+- jQuery UI
+- jqPlot
+
 Other features I have in mind:
 - Linking back to the actual sites for "faster" navigation
 - Further breakdown of what particular parts of the site are being visited
