@@ -1,13 +1,16 @@
 {
-    "name": "History Stats",
-    "version": "1.0",
-    "description": "Shows some simple statistics of your browser history.",
-    "browser_action": {
-        "default_icon": "icon.png",
-        "popup": "popup.html"
-	},
-	"permissions": [
-		"history",
-		"tabs"
-	]
+  "manifest_version": 2,
+
+  "name": "History Stats",
+  "description": "Shows some simple statistics of your browser history.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "history"
+  ]
 }

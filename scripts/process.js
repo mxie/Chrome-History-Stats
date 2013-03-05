@@ -1,15 +1,17 @@
 function showStats(div) {
     var twoWks_ms = 1000 * 60 * 60 * 24 * 7 * 2;
     var twoWksAgo = (new Date).getTime() - twoWks_ms;
-    
+
+    var query = {
+        text: '',
+        startTime: twoWksAgo,
+        maxResults: 1000
+    };
+
     // using chrome API to grab the most recent 1000 history items (urls) from within the past 2 weeks
     chrome.history.search(
-        {
-            text: '',
-            startTime: twoWksAgo,
-            maxResults: 1000
-        },
-        function(results) {
+        query,
+        function (results) {
             var urlCounts = {};
 
             // make the URL into a link so that we can just grab its hostname later
@@ -24,9 +26,9 @@ function showStats(div) {
                 var l = makeLink(results[i].url);
                 var url = l.hostname;
                 var count = results[i].visitCount;
-console.log(url+": "+count);                
+
                 if (url) {
-                    urlCounts[url] = !urlCounts[url] ? count : urlCounts[url] + count;
+                    urlCounts[url] = urlCounts[url] ? urlCounts[url] + count : count;
                 }
             }
 
@@ -42,6 +44,8 @@ console.log(url+": "+count);
         }
     );
 }
+
+
 
 // sorting function for the array of URLs
 function sortUrls(a, b) {
@@ -88,3 +92,7 @@ function makeChart(urlCounts, div) {
         $(document).unload(function() {$('*').unbind(); });
     });
 }
+
+$(document).ready(function() {
+  showStats('piechart')
+});
